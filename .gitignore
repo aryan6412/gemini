@@ -1,0 +1,8 @@
+# Exclude local machine configuration and credentials
+config.json
+mcp_config.json
+.migrated
+projects/
+sidecars/
+*.log
+.env*
