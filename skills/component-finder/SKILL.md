@@ -48,25 +48,10 @@ Always generate a self-contained interactive Generative UI artifact in the curre
   - **"📋 Copy Code" Button**: Direct raw code copying.
   - **Source Library Badges**: Clear tags indicating which library the design originates from.
 
-### 4. HTML Template Structure (Generative UI Compliant)
-Use the allowlisted Tailwind script and embed standard CSS variables:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
-  <style>
-    .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-  </style>
-</head>
-<body class="bg-slate-950 text-slate-100 p-6 min-h-screen">
-  <!-- Header with search, stats, & theme toggle -->
-  <!-- Component Grid with numbered badges, live preview, "⚡ Use This" button, and copyable code -->
-</body>
-</html>
-```
+### 4. Bulletproof Styling Rule (Self-Contained Embedded CSS)
+To ensure 100% reliable, zero-latency, and gorgeous visual rendering in Antigravity webviews (without relying on external CDNs that might be blocked by CSP):
+* **Always embed complete CSS directly inside `<style>` tags** in the HTML file (including reset, flex/grid layouts, keyframe animations, dark themes, and hover transitions).
+* Never rely solely on external script tags for layout rendering.
 
 ### 5. Automatic Component Adoption Workflow ("Use This" Execution)
 Whenever the user replies with *"Use #1"*, *"Use this component"*, *"Insert the Aceternity button"*, or triggers the *"Use This in Project"* action:
