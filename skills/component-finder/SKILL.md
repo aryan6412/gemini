@@ -41,10 +41,11 @@ Select top variants from major design ecosystems:
 Always generate a self-contained interactive Generative UI artifact in the current artifact directory:
 * **File Path**: `<artifact_dir>/component_gallery.html`
 * **Features Required in the HTML Showcase**:
+  - **Numbered Components (#1, #2, #3...)**: Clear numbered badge on each card so the user can easily select one in chat.
   - **Live Visual Previews**: Render each component variant cleanly with interactive hover/active states.
   - **Filter & Search Bar**: Quick filter by style (Modern, Minimal, Animated, Enterprise, Brutalist, Glassmorphism).
-  - **Dark / Light Mode Preview Switcher**: Real-time theme toggle to test contrast.
-  - **One-Click Code Copy**: Button with visual confirmation (`Copied!`) copying React/TSX/HTML code.
+  - **"⚡ Use This in Project" Button**: Clicking copies a ready command (`Use Component #1 in my project`) and highlights the card.
+  - **"📋 Copy Code" Button**: Direct raw code copying.
   - **Source Library Badges**: Clear tags indicating which library the design originates from.
 
 ### 4. HTML Template Structure (Generative UI Compliant)
@@ -62,12 +63,15 @@ Use the allowlisted Tailwind script and embed standard CSS variables:
 </head>
 <body class="bg-slate-950 text-slate-100 p-6 min-h-screen">
   <!-- Header with search, stats, & theme toggle -->
-  <!-- Component Grid with interactive cards, live render box, library badge, and copyable code -->
+  <!-- Component Grid with numbered badges, live preview, "⚡ Use This" button, and copyable code -->
 </body>
 </html>
 ```
 
-### 5. Present Response to User
-1. Embed the interactive showcase in your response using:
-   `<agent-embed src="file:///<artifact_dir>/component_gallery.html"></agent-embed>`
-2. Provide a quick summary of the top styles presented and offer to adapt any chosen variant directly into the user's project stack (React, Vue, HTML/CSS, Tailwind, Next.js).
+### 5. Automatic Component Adoption Workflow ("Use This" Execution)
+Whenever the user replies with *"Use #1"*, *"Use this component"*, *"Insert the Aceternity button"*, or triggers the *"Use This in Project"* action:
+1. **Analyze Project Tech Stack**: Detect whether the current workspace is using React/Next.js, Vue, Svelte, Tailwind, or plain HTML/CSS.
+2. **Create the Component File**: Write the modular component into the project's UI folder (e.g., `src/components/ui/Button.tsx`, `components/Button.jsx`, or project-specific directory).
+3. **Configure Dependencies & Styles**: Ensure all necessary Tailwind classes, CSS keyframes, or icon packages (like `lucide-react`) are properly imported.
+4. **Insert into Target View**: If the user specified a location (e.g., "Put it in the Hero section"), immediately integrate the `<Button />` into that file.
+5. **Report & Verify**: Show the exact file created and a quick import snippet.
