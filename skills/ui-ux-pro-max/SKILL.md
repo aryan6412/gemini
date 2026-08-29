@@ -302,6 +302,23 @@ When designing, refactoring, or polishing frontend components and user interface
 
 ---
 
+## 13. FORM CRO & HIGH-CONVERSION INPUT STANDARDS
+When designing forms and data capture flows:
+- **Instant Inline Validation**: Validate on blur with green checkmark or soft red alert; never wait until form submit to show basic format errors.
+- **Smart Input Masking & Autofill**: Add standard HTML `autocomplete` attributes (`email`, `current-password`, `tel`, `address-line1`) and auto-format phone/currency numbers.
+- **Floating Labels & Focus Elevation**: Use subtle border transitions and elevation on focus without jarring layout shifts.
+- **Accessible Error Placement**: Associate error text with input via `aria-describedby` and `aria-invalid="true"`.
+
+---
+
+## 14. SEO, SOCIAL META & STRUCTURED DATA STANDARDS
+For public routes, marketing pages, and shareable content:
+- **Dynamic OpenGraph & Twitter Cards**: Always render `<meta property="og:title">`, `og:description`, `og:image` (1200x630), and `twitter:card`.
+- **JSON-LD Structured Data**: Inject rich schema scripts (`SoftwareApplication`, `Organization`, `FAQPage`, `BreadcrumbList`) for search engines.
+- **Canonical & Viewport Tags**: Include `<link rel="canonical">` and proper `<meta name="viewport" content="width=device-width, initial-scale=1.0">`.
+
+---
+
 ## VELOX ERP BRAND TOKENS
 ```css
 --velox-primary: #0d6efd;          /* Bootstrap primary */
