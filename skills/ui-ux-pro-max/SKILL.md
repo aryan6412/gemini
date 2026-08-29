@@ -248,6 +248,60 @@ To ensure desktop-app responsiveness and eliminate layout flicker/scroll loss:
 
 ---
 
+## 12. 16 PROACTIVE UI/UX ENHANCEMENTS
+
+When designing, refactoring, or polishing frontend components and user interfaces, proactively implement and offer the following 16 UI/UX enhancements where relevant:
+
+### 1. Dark Mode Toggle
+- Implement persistent theme toggling (Light/Dark/System) using standard CSS variables or Tailwind `dark:` classes with `localStorage` state retention.
+
+### 2. Cookie & Privacy Consent Banner
+- Provide a clean, non-intrusive banner for cookie consent and privacy preference management.
+
+### 3. Back-to-Top Button
+- Add a smooth-scrolling floating trigger that conditionally appears when scrolling past 300px.
+
+### 4. Responsive Mobile Navigation
+- Build accessible hamburger drawers/menus with touch-friendly targets, backdrop blur, and focus trapping.
+
+### 5. Global Keyboard Shortcuts
+- Include standard keyboard event listeners (e.g., `Cmd/Ctrl + K` command palette, `Escape` to close modals).
+
+### 6. Interactive Hover & Focus States
+- Add clear micro-interactions, cursor feedback, focus rings for accessibility, and smooth transitions on all clickable elements.
+
+### 7. Scroll Progress Bar
+- Implement a subtle top progress bar showing reading or scroll completion on long-form content.
+
+### 8. One-Click Copy Buttons
+- Include copy-to-clipboard functionality with instant visual feedback (e.g., checkmark icon or tooltip) on code blocks, links, and tokens.
+
+### 9. Skeleton Loaders
+- Render pulse/shimmer skeleton placeholders during asynchronous data fetches instead of blank screens or jarring spinners.
+
+### 10. Sticky Navigation Header
+- Keep main navigation accessible with fixed/sticky positioning and subtle elevation/blur on scroll.
+
+### 11. Skip-to-Content Link
+- Include an accessible `#main-content` skip link at the top of the DOM for screen reader and keyboard navigation.
+
+### 12. OpenGraph & Social Meta Tags
+- Generate complete OpenGraph and Twitter card metadata (title, description, dynamic image, URL) for every shareable route.
+
+### 13. Engaging Empty States
+- Create informative zero-data illustrations/messages with clear call-to-action buttons (e.g., "Create your first project").
+
+### 14. Expandable FAQ Accordions
+- Organize FAQs and dense text into smooth, accessible accordion collapse components (`<details>/<summary>` or accessible ARIA panels).
+
+### 15. Toast Notifications
+- Provide non-blocking, auto-dismissing toast alerts for asynchronous operations (success, error, warning, info).
+
+### 16. Password Visibility Toggle
+- Add an interactive show/hide toggle inside password input fields to improve user login and registration accuracy.
+
+---
+
 ## VELOX ERP BRAND TOKENS
 ```css
 --velox-primary: #0d6efd;          /* Bootstrap primary */
